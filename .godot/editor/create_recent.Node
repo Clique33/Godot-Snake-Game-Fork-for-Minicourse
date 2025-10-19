@@ -1,3 +1,4 @@
+Node
 AudioStreamPlayer
 VBoxContainer
 ColorRect
@@ -11,4 +12,3 @@ Node2D
 TextureRect
 Label
 HBoxContainer
-Timer
