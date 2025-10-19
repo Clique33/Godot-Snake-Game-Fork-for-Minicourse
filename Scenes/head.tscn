@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://davrjqog8hx8u"]
 
 [ext_resource type="Texture2D" uid="uid://depibclpexrdd" path="res://Sprites/Head.png" id="1_b01bd"]
-[ext_resource type="Script" path="res://Scripts/Head.gd" id="1_sj56r"]
+[ext_resource type="Script" uid="uid://cc0lnfehu1xmo" path="res://Scripts/head.gd" id="1_sj56r"]
 [ext_resource type="AudioStream" uid="uid://trkorban7qyq" path="res://Sounds/Turn.wav" id="3_ms545"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d506d"]

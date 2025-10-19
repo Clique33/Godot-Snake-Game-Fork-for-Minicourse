@@ -1,6 +1,5 @@
+extends Snake
 class_name Head
-extends Area2D
-
 
 var input_dir: Dictionary = {
 	"move_up": Vector2.UP,
@@ -9,11 +8,10 @@ var input_dir: Dictionary = {
 	"move_right": Vector2.RIGHT
 }
 
-
 var tw: Tween
 var can_move: bool = true
 var current_dir: Vector2 = input_dir["move_right"]
-@onready var turn = $Turn # For "Game" to access
+@onready var turn = $Turn
 
 
 var grid_size: int = 32
@@ -27,7 +25,7 @@ func _unhandled_input(event):
 		if event.is_action_pressed(key):
 			# Set the current direction equal to the vector corresponding to the key in the dictionary
 			current_dir = input_dir[key]
-			$Turn.play()
+			turn.play()
 
 
 func _process(delta):
@@ -36,7 +34,7 @@ func _process(delta):
 	
 	if can_move:
 		# "can_move" is used to play the tween once
-		SignalBus.has_moved.emit(speed)
+		has_moved.emit(speed)
 		can_move = false
 		# In case the player quickly changes the direction
 		# Make sure the current direction does not equal the opposite direction
