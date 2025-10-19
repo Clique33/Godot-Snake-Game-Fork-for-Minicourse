@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8xlbx87g8reh"]
+
+[ext_resource type="Script" uid="uid://b16lubiapd444" path="res://Scripts/game_over.gd" id="1_ccer4"]
+[ext_resource type="FontFile" uid="uid://de3lhc3lbnu05" path="res://LeagueSpartan-Bold.otf" id="1_y26ei"]
+[ext_resource type="AudioStream" uid="uid://di6umj5egyse" path="res://Sounds/Lose.wav" id="3_8u835"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6b7sx"]
+font = ExtResource("1_y26ei")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_b6l08"]
+font = ExtResource("1_y26ei")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_d663s"]
+font = ExtResource("1_y26ei")
+font_size = 18
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ccer4")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 800.0
+color = Color(0.00392157, 0.027451, 0.00392157, 0.592157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 800.0
+alignment = 1
+
+[node name="GameOverText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER!"
+label_settings = SubResource("LabelSettings_6b7sx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverTime" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "TIME:"
+label_settings = SubResource("LabelSettings_b6l08")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_b6l08")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartHint" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+PRESS R TO CONTINUE"
+label_settings = SubResource("LabelSettings_d663s")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8u835")
