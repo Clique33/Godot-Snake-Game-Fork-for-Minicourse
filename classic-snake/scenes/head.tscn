@@ -8,6 +8,7 @@ size = Vector2(115, 113)
 
 [node name="Head" type="CharacterBody2D"]
 script = ExtResource("1_d75dd")
+speed = 15.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_nsfte")

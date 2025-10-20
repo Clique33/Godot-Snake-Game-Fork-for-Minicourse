@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4445mvlybve5"]
+
+[ext_resource type="PackedScene" uid="uid://bhb3i76wgri2v" path="res://scenes/food_spawner.tscn" id="1_mt48w"]
+[ext_resource type="PackedScene" uid="uid://mmffm3jh4u8m" path="res://scenes/head.tscn" id="2_42s74"]
+
+[node name="TestFoodSpawner" type="Node2D"]
+
+[node name="Head" parent="." instance=ExtResource("2_42s74")]
+position = Vector2(688, 394)
+
+[node name="FoodSpawner" parent="." instance=ExtResource("1_mt48w")]
+limit_minimum = Vector2(0, 0)
+limit_maximum = Vector2(1152, 648)
+maximum_concurrent_foods = 3
