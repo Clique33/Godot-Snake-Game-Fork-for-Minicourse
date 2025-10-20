@@ -1,12 +1,16 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cvog14ir7yfs7"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://cvog14ir7yfs7"]
 
 [ext_resource type="Texture2D" uid="uid://dutyt6bc0s4h" path="res://icon.svg" id="1_l2dba"]
+[ext_resource type="Texture2D" uid="uid://caot3t30grtry" path="res://resources/assets/sprites/Floor.png" id="2_v42c3"]
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_l2dba"]
-tile_data = PackedInt32Array(0, 65536, 6, 65536, 65536, 6, 131072, 65536, 6, 196608, 65536, 6, 1, 65536, 6, 65537, 65536, 6, 131073, 65536, 6, 196609, 65536, 6, 2, 65536, 6, 65538, 65536, 6, 131074, 65536, 6, 196610, 65536, 6, 3, 65536, 6, 65539, 65536, 6, 131075, 65536, 6, 196611, 65536, 6)
+[sub_resource type="TileMapPattern" id="TileMapPattern_gdqrk"]
+tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 0, 196608, 1, 1, 1, 65537, 0, 65537, 65537, 1, 131073, 65537, 0, 196609, 65537, 1, 2, 1, 0, 65538, 1, 1, 131074, 1, 0, 196610, 1, 1, 3, 65537, 0, 65539, 65537, 1, 131075, 65537, 0, 196611, 65537, 1)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_v42c3"]
-tile_data = PackedInt32Array(0, 196608, 2, 65536, 196608, 2, 131072, 196608, 2, 196608, 196608, 2, 1, 196608, 2, 65537, 196608, 2, 131073, 196608, 2, 196609, 196608, 2, 2, 196608, 2, 65538, 196608, 2, 131074, 196608, 2, 196610, 196608, 2, 3, 196608, 2, 65539, 196608, 2, 131075, 196608, 2, 196611, 196608, 2)
+[sub_resource type="TileMapPattern" id="TileMapPattern_1f81h"]
+tile_data = PackedInt32Array(0, 131073, 0, 65536, 131073, 1, 131072, 131073, 0, 196608, 131073, 1, 1, 196609, 0, 65537, 196609, 1, 131073, 196609, 0, 196609, 196609, 1, 2, 131073, 0, 65538, 131073, 1, 131074, 131073, 0, 196610, 131073, 1, 3, 196609, 0, 65539, 196609, 1, 131075, 196609, 0, 196611, 196609, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_801r1"]
+tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 0, 196608, 1, 1, 262144, 131073, 0, 327680, 131073, 1, 393216, 131073, 0, 458752, 131073, 1, 1, 65537, 0, 65537, 65537, 1, 131073, 65537, 0, 196609, 65537, 1, 262145, 196609, 0, 327681, 196609, 1, 393217, 196609, 0, 458753, 196609, 1, 2, 1, 0, 65538, 1, 1, 131074, 1, 0, 196610, 1, 1, 262146, 131073, 0, 327682, 131073, 1, 393218, 131073, 0, 458754, 131073, 1, 3, 65537, 0, 65539, 65537, 1, 131075, 65537, 0, 196611, 65537, 1, 262147, 196609, 0, 327683, 196609, 1, 393219, 196609, 0, 458755, 196609, 1, 4, 131073, 0, 65540, 131073, 1, 131076, 131073, 0, 196612, 131073, 1, 262148, 1, 0, 327684, 1, 1, 393220, 1, 0, 458756, 1, 1, 5, 196609, 0, 65541, 196609, 1, 131077, 196609, 0, 196613, 196609, 1, 262149, 65537, 0, 327685, 65537, 1, 393221, 65537, 0, 458757, 65537, 1, 6, 131073, 0, 65542, 131073, 1, 131078, 131073, 0, 196614, 131073, 1, 262150, 1, 0, 327686, 1, 1, 393222, 1, 0, 458758, 1, 1, 7, 196609, 0, 65543, 196609, 1, 131079, 196609, 0, 196615, 196609, 1, 262151, 65537, 0, 327687, 65537, 1, 393223, 65537, 0, 458759, 65537, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v42c3"]
 texture = ExtResource("1_l2dba")
@@ -75,8 +79,29 @@ texture = ExtResource("1_l2dba")
 6:7/0 = 0
 7:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0pt4f"]
+texture = ExtResource("2_v42c3")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_v42c3")
-pattern_0 = SubResource("TileMapPattern_l2dba")
-pattern_1 = SubResource("TileMapPattern_v42c3")
+sources/1 = SubResource("TileSetAtlasSource_0pt4f")
+pattern_0 = SubResource("TileMapPattern_gdqrk")
+pattern_1 = SubResource("TileMapPattern_1f81h")
+pattern_2 = SubResource("TileMapPattern_801r1")

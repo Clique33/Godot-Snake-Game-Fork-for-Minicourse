@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuso8vcxdwqpd"]
+[gd_scene load_steps=4 format=3 uid="uid://cuso8vcxdwqpd"]
 
 [ext_resource type="Script" uid="uid://dkko8vqpqfomu" path="res://scripts/ui/end_screen.gd" id="1_4ttpn"]
+[ext_resource type="FontFile" uid="uid://ggk1tvkr7w1f" path="res://resources/assets/fonts/LeagueSpartan-Bold.otf" id="2_n8r4t"]
+[ext_resource type="AudioStream" uid="uid://cbc4igl2p6y6r" path="res://resources/assets/sound_effects/Lose.wav" id="3_wgyui"]
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -27,6 +29,7 @@ alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_n8r4t")
 theme_override_font_sizes/font_size = 40
 text = "GAME OVER"
 horizontal_alignment = 1
@@ -36,6 +39,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_n8r4t")
 theme_override_font_sizes/font_size = 32
 text = "Score: 42"
 horizontal_alignment = 1
@@ -45,6 +49,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_n8r4t")
 theme_override_font_sizes/font_size = 32
 text = "Time: 00:10"
 horizontal_alignment = 1
@@ -54,7 +59,11 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_n8r4t")
 theme_override_font_sizes/font_size = 24
 text = "Press R to Restart"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LoseAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wgyui")

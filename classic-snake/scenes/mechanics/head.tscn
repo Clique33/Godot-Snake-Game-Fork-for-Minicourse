@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://mmffm3jh4u8m"]
+[gd_scene load_steps=5 format=3 uid="uid://mmffm3jh4u8m"]
 
 [ext_resource type="Script" uid="uid://s8kxi3jpyvqj" path="res://scripts/mechanics/head.gd" id="1_d75dd"]
-[ext_resource type="Texture2D" uid="uid://dutyt6bc0s4h" path="res://icon.svg" id="1_nsfte"]
+[ext_resource type="Texture2D" uid="uid://deqt8c0h3egf3" path="res://resources/assets/sprites/Head.png" id="2_a1quq"]
+[ext_resource type="AudioStream" uid="uid://cy6pei2ki56ip" path="res://resources/assets/sound_effects/Turn.wav" id="3_a1quq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d75dd"]
 size = Vector2(115, 113)
@@ -11,9 +12,13 @@ script = ExtResource("1_d75dd")
 speed = 15.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_nsfte")
+scale = Vector2(4, 4)
+texture = ExtResource("2_a1quq")
 region_rect = Rect2(16, 16, 96.458, 93.956)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_d75dd")
+
+[node name="MovedAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_a1quq")
