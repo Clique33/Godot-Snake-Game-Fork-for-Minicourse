@@ -24,17 +24,20 @@ offset_bottom = 64.0
 color = Color(0.478886, 0.715965, 0.901303, 1)
 
 [node name="LeftBorder" type="ColorRect" parent="Borders"]
+layout_mode = 0
 offset_right = 32.0
 offset_bottom = 640.0
 color = Color(0.478886, 0.715965, 0.901303, 1)
 
 [node name="RightBorder" type="ColorRect" parent="Borders"]
+layout_mode = 0
 offset_left = 1120.0
 offset_right = 1152.0
 offset_bottom = 640.0
 color = Color(0.478886, 0.715965, 0.901303, 1)
 
 [node name="LowerBorder" type="ColorRect" parent="Borders"]
+layout_mode = 0
 offset_top = 608.0
 offset_right = 1152.0
 offset_bottom = 640.0
