@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func set_score(score : int) -> void:
-	score_label.text = "score : "+str(score)
+	score_label.text = "x"+str(score)
 
 
 func get_elapsed_time_str() -> String:

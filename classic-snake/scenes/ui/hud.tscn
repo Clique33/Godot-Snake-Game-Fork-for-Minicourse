@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0qlf4or2ai8k"]
+[gd_scene load_steps=5 format=3 uid="uid://c0qlf4or2ai8k"]
 
 [ext_resource type="Script" uid="uid://bficnsbet5sra" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="FontFile" uid="uid://ggk1tvkr7w1f" path="res://resources/assets/fonts/LeagueSpartan-Bold.otf" id="2_bo48s"]
 [ext_resource type="Script" uid="uid://cajehwsthu8id" path="res://scripts/mechanics/time_manager.gd" id="2_hqnrr"]
+[ext_resource type="Texture2D" uid="uid://bpfdw4ddnfmfx" path="res://resources/assets/sprites/Apple.png" id="3_8qguk"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -21,27 +23,27 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 64.0
-color = Color(0.478886, 0.715965, 0.901303, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="LeftBorder" type="ColorRect" parent="Borders"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 640.0
-color = Color(0.478886, 0.715965, 0.901303, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="RightBorder" type="ColorRect" parent="Borders"]
 layout_mode = 0
 offset_left = 1120.0
 offset_right = 1152.0
 offset_bottom = 640.0
-color = Color(0.478886, 0.715965, 0.901303, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="LowerBorder" type="ColorRect" parent="Borders"]
 layout_mode = 0
 offset_top = 608.0
 offset_right = 1152.0
 offset_bottom = 640.0
-color = Color(0.478886, 0.715965, 0.901303, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 0
@@ -58,26 +60,36 @@ layout_mode = 2
 [node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-color = Color(0.478431, 0.717647, 0.901961, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="TimeLabel" type="Label" parent="HSplitContainer/HBoxContainer2"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "adsdasdasda"
+theme_override_fonts/font = ExtResource("2_bo48s")
+text = "time"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer"]
 layout_mode = 2
 alignment = 2
 
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_8qguk")
+expand_mode = 1
+stretch_mode = 4
+
 [node name="ScoreLabel" type="Label" parent="HSplitContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "sdasdas"
+theme_override_fonts/font = ExtResource("2_bo48s")
+text = "x"
 
 [node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-color = Color(0.478431, 0.717647, 0.901961, 1)
+color = Color(0.172549, 0.356863, 0.176471, 1)
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("2_hqnrr")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckkyy0s0vflaj"]
+[gd_scene load_steps=8 format=3 uid="uid://ckkyy0s0vflaj"]
 
 [ext_resource type="Script" uid="uid://ct4oed8qlnyqh" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://qmr6q7tc7blr" path="res://scenes/mechanics/field.tscn" id="1_o5qli"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bhb3i76wgri2v" path="res://scenes/mechanics/food_spawner.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c0qlf4or2ai8k" path="res://scenes/ui/hud.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cuso8vcxdwqpd" path="res://scenes/ui/end_screen.tscn" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://brs7n8cim3ecw" path="res://resources/assets/sound_effects/Eat.wav" id="7_o6xl0"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jyhfs")
@@ -34,6 +35,9 @@ layer = 2
 
 [node name="EndScreen" parent="UiLayer" instance=ExtResource("6_tefeu")]
 visible = false
+
+[node name="EatenAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_o6xl0")
 
 [connection signal="head_hit" from="GameplayLayer/Field" to="." method="_on_field_head_hit"]
 [connection signal="food_eaten" from="GameplayLayer/FoodSpawner" to="." method="_on_food_spawner_food_eaten"]
