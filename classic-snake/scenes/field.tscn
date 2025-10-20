@@ -27,17 +27,21 @@ tile_set = ExtResource("1_6pmjc")
 [node name="LeftmostBorder" type="CollisionShape2D" parent="BorderArea"]
 position = Vector2(-10, 320)
 shape = SubResource("RectangleShape2D_lptdg")
+debug_color = Color(0.984968, 0, 0.338416, 0.42)
 
 [node name="RightmostBorder" type="CollisionShape2D" parent="BorderArea"]
 position = Vector2(1162, 320)
 shape = SubResource("RectangleShape2D_7156t")
+debug_color = Color(0.984314, 0, 0.337255, 0.419608)
 
 [node name="UpperBorder" type="CollisionShape2D" parent="BorderArea"]
 position = Vector2(576.5, -10)
 shape = SubResource("RectangleShape2D_pn4dk")
+debug_color = Color(0.984314, 0, 0.337255, 0.419608)
 
 [node name="LowerBorder" type="CollisionShape2D" parent="BorderArea"]
 position = Vector2(576.5, 650)
 shape = SubResource("RectangleShape2D_wnvii")
+debug_color = Color(0.984314, 0, 0.337255, 0.419608)
 
 [connection signal="body_entered" from="BorderArea" to="." method="_on_border_area_body_entered"]

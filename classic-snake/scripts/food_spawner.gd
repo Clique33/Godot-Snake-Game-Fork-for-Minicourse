@@ -1,6 +1,8 @@
 extends Node
 class_name FoodSpawner
 
+signal food_eaten
+
 var food_scene : PackedScene = preload("res://scenes/food.tscn")
 
 @export var limit_minimum : Vector2 = Vector2(200,200)
@@ -30,3 +32,4 @@ func randVect2() -> Vector2:
 
 func _on_food_eaten(food : Node2D) -> void:
 	food.queue_free()
+	food_eaten.emit()
