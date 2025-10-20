@@ -1,46 +1,31 @@
 [gd_scene load_steps=6 format=3 uid="uid://ckkyy0s0vflaj"]
 
 [ext_resource type="Script" uid="uid://ct4oed8qlnyqh" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://qmr6q7tc7blr" path="res://scenes/field.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://mmffm3jh4u8m" path="res://scenes/head.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bhb3i76wgri2v" path="res://scenes/food_spawner.tscn" id="3_jyhfs"]
-[ext_resource type="Script" uid="uid://cajehwsthu8id" path="res://scripts/time_manager.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://qmr6q7tc7blr" path="res://scenes/mechanics/field.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://mmffm3jh4u8m" path="res://scenes/mechanics/head.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bhb3i76wgri2v" path="res://scenes/mechanics/food_spawner.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c0qlf4or2ai8k" path="res://scenes/ui/hud.tscn" id="4_tefeu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_jyhfs")
 
-[node name="Field" parent="." instance=ExtResource("1_o5qli")]
+[node name="GameplayLayer" type="CanvasLayer" parent="."]
 
-[node name="Head" parent="." instance=ExtResource("2_0wfyh")]
-position = Vector2(288, 97)
-scale = Vector2(0.5, 0.5)
+[node name="Field" parent="GameplayLayer" instance=ExtResource("1_o5qli")]
 
-[node name="FoodSpawner" parent="." instance=ExtResource("3_jyhfs")]
-limit_minimum = Vector2(40, 40)
+[node name="Head" parent="GameplayLayer" instance=ExtResource("2_0wfyh")]
+position = Vector2(320, 321)
+scale = Vector2(0.25, 0.25)
+speed = 12.0
+
+[node name="FoodSpawner" parent="GameplayLayer" instance=ExtResource("3_jyhfs")]
+limit_minimum = Vector2(40, 104)
 limit_maximum = Vector2(1112, 600)
 
-[node name="TimeManager" type="Node" parent="."]
-script = ExtResource("5_tbgi4")
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 2
 
-[node name="DisplayTimeTimer" type="Timer" parent="TimeManager"]
-autostart = true
+[node name="Hud" parent="HudLayer" instance=ExtResource("4_tefeu")]
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 998.0
-offset_top = 74.0
-offset_right = 1060.0
-offset_bottom = 97.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "sdasdas"
-
-[node name="TimeLabel" type="Label" parent="."]
-offset_left = 996.0
-offset_top = 17.0
-offset_right = 1097.0
-offset_bottom = 40.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "adsdasdasda"
-
-[connection signal="head_hit" from="Field" to="." method="_on_field_head_hit"]
-[connection signal="food_eaten" from="FoodSpawner" to="." method="_on_food_spawner_food_eaten"]
-[connection signal="timeout" from="TimeManager/DisplayTimeTimer" to="." method="_on_display_time_timer_timeout"]
+[connection signal="head_hit" from="GameplayLayer/Field" to="." method="_on_field_head_hit"]
+[connection signal="food_eaten" from="GameplayLayer/FoodSpawner" to="." method="_on_food_spawner_food_eaten"]

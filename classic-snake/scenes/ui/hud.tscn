@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0qlf4or2ai8k"]
+
+[ext_resource type="Script" uid="uid://bficnsbet5sra" path="res://scripts/ui/hud.gd" id="1_0mwgc"]
+[ext_resource type="Script" uid="uid://cajehwsthu8id" path="res://scripts/mechanics/time_manager.gd" id="2_hqnrr"]
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0mwgc")
+
+[node name="Borders" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpperBorder" type="ColorRect" parent="Borders"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 64.0
+color = Color(0.478886, 0.715965, 0.901303, 1)
+
+[node name="LeftBorder" type="ColorRect" parent="Borders"]
+offset_right = 32.0
+offset_bottom = 640.0
+color = Color(0.478886, 0.715965, 0.901303, 1)
+
+[node name="RightBorder" type="ColorRect" parent="Borders"]
+offset_left = 1120.0
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.478886, 0.715965, 0.901303, 1)
+
+[node name="LowerBorder" type="ColorRect" parent="Borders"]
+offset_top = 608.0
+offset_right = 1152.0
+offset_bottom = 640.0
+color = Color(0.478886, 0.715965, 0.901303, 1)
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 64.0
+split_offset = 576
+drag_area_margin_begin = 50
+drag_area_margin_end = 50
+drag_area_highlight_in_editor = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(0.478431, 0.717647, 0.901961, 1)
+
+[node name="TimeLabel" type="Label" parent="HSplitContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "adsdasdasda"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ScoreLabel" type="Label" parent="HSplitContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "sdasdas"
+
+[node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(0.478431, 0.717647, 0.901961, 1)
+
+[node name="TimeManager" type="Node" parent="."]
+script = ExtResource("2_hqnrr")
+
+[node name="DisplayTimeTimer" type="Timer" parent="TimeManager"]
+autostart = true
+
+[connection signal="timeout" from="TimeManager/DisplayTimeTimer" to="." method="_on_display_time_timer_timeout"]
