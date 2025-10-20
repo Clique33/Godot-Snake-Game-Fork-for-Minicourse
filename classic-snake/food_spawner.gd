@@ -18,7 +18,7 @@ func spawn_food() -> void:
 	var food : Food = food_scene.instantiate()
 	food.global_position = randVect2()
 	food.food_eaten.connect(_on_food_eaten)
-	add_child.call_deferred(food)
+	add_child(food)
 
 
 func randVect2() -> Vector2:
