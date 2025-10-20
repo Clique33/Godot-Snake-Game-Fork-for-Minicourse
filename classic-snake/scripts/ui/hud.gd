@@ -16,6 +16,9 @@ func set_score(score : int) -> void:
 	score_label.text = "score : "+str(score)
 
 
+func get_elapsed_time_str() -> String:
+	return time_label.text.replace("time : ","")
+
 func update_time() -> void:
 	time_label.text = "time : "+str(get_current_timestamp())
 
