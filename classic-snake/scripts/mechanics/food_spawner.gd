@@ -3,7 +3,7 @@ class_name FoodSpawner
 
 signal food_eaten
 
-var food_scene : PackedScene = preload("res://scenes/food.tscn")
+var food_scene : PackedScene = preload("res://scenes/mechanics/food.tscn")
 
 @export var limit_minimum : Vector2 = Vector2(200,200)
 @export var limit_maximum : Vector2 = Vector2(500,500)
