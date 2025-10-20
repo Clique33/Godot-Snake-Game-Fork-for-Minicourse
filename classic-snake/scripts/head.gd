@@ -1,11 +1,18 @@
 extends CharacterBody2D
+class_name Head
+
+@export var speed : float:
+	set(value):
+		speed = value
+		_internal_speed = speed*1000
 
 var possible_directions : Array[Vector2] = [Vector2.DOWN,Vector2.UP,Vector2.RIGHT,Vector2.LEFT]
-var speed : float = 10000
 var direction_of_movement : Vector2
 
+var _internal_speed : float
+
 func _process(delta: float) -> void:
-	velocity = direction_of_movement*speed*delta
+	velocity = direction_of_movement*_internal_speed*delta
 	move_and_slide()
 
 func _unhandled_input(event: InputEvent) -> void:

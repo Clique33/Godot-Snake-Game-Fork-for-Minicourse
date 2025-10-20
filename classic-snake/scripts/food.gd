@@ -1,4 +1,5 @@
 extends Node2D
+class_name Food
 
 signal food_eaten(food)
 
