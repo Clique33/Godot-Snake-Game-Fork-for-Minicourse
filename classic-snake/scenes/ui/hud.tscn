@@ -60,7 +60,7 @@ layout_mode = 2
 [node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-color = Color(0.172549, 0.356863, 0.176471, 1)
+color = Color(1, 1, 1, 0)
 
 [node name="TimeLabel" type="Label" parent="HSplitContainer/HBoxContainer2"]
 layout_mode = 2
@@ -89,7 +89,7 @@ text = "x"
 [node name="MarginRect" type="ColorRect" parent="HSplitContainer/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
-color = Color(0.172549, 0.356863, 0.176471, 1)
+color = Color(0.172549, 0.356863, 0.176471, 0)
 
 [node name="TimeManager" type="Node" parent="."]
 script = ExtResource("2_hqnrr")

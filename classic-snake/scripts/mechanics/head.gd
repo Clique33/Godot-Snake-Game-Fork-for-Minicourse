@@ -4,18 +4,24 @@ class_name Head
 @export var speed : float:
 	set(value):
 		speed = value
-		_internal_speed = speed*1000
+		_internal_speed = speed*80
+@export var offset_vector : Vector2 = Vector2(16,16)
+@export var grid_size : Vector2 = Vector2(32,32)
 
 var possible_directions : Array[Vector2] = [Vector2.DOWN,Vector2.UP,Vector2.RIGHT,Vector2.LEFT]
 var direction_of_movement : Vector2
+var direction_of_next_movement : Vector2
 
 var _internal_speed : float
 
 @onready var moved_audio_player: AudioStreamPlayer2D = $MovedAudioPlayer
 
 func _process(delta: float) -> void:
+	change_direction_snapped()
 	velocity = direction_of_movement*_internal_speed*delta
-	move_and_slide()
+	print(position)
+	position = snapped(position + velocity,Vector2(4,4))
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	var vector : Vector2 = Input.get_vector(
@@ -25,6 +31,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			"move_down",
 	)
 	if vector in possible_directions and vector != -direction_of_movement:
-		direction_of_movement = vector
-		rotation = direction_of_movement.angle()
+		direction_of_next_movement = vector
 		moved_audio_player.play()
+
+
+func change_direction_snapped() -> void:
+	if position+offset_vector == snapped(position,grid_size):
+		direction_of_movement = direction_of_next_movement
+		rotation = direction_of_movement.angle()

@@ -8,7 +8,8 @@ var food_scene : PackedScene = preload("res://scenes/mechanics/food.tscn")
 @export var limit_minimum : Vector2 = Vector2(200,200)
 @export var limit_maximum : Vector2 = Vector2(500,500)
 @export var maximum_concurrent_foods : int = 1
-
+@export var offset_vector : Vector2 = Vector2(16,16)
+@export var grid_size : Vector2 = Vector2(32,32)
 
 func _process(delta: float) -> void:
 	if get_child_count() >= maximum_concurrent_foods:
@@ -24,10 +25,11 @@ func spawn_food() -> void:
 
 
 func randVect2() -> Vector2:
-	return Vector2(
-		randi_range(limit_minimum.x,limit_maximum.x),
-		randi_range(limit_minimum.y,limit_maximum.y)
-	)
+	return offset_vector + snapped(Vector2(
+									randi_range(limit_minimum.x,limit_maximum.x),
+									randi_range(limit_minimum.y,limit_maximum.y)
+									),
+								grid_size)
 
 
 func _on_food_eaten(food : Node2D) -> void:
