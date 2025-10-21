@@ -136,12 +136,12 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 
 1. Criar a cena **EndScreen** como `Control`.  
 2. Criar um fundo escurecido com `ColorRect` (preto, semitransparente).  
-3. Adicionar um `VBoxContainer` com os seguintes `Labels`:
-   - “Game Over”
-   - “Pontuação final”
-   - “Tempo total”
-   - “Mensagem para reiniciar”
-4. Criar um script com uma função para ser chamada ao mostrar a tela.  
+3. Adicionar um `VBoxContainer` com `Labels` para:
+   - Game Over
+   - Pontuação final
+   - Tempo total
+   - Mensagem para reiniciar
+4. Criar um script com uma função para ser chamada ao mostrar a tela, setando as labels e tornando a tela visível.  
 5. Introduzir o uso do **modo de pausa** e dos **modos de processo** (`Node.process_mode`).
 
 ---
