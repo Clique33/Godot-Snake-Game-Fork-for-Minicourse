@@ -110,6 +110,7 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
    - Ligar o sinal de **Field** para reiniciar ao morrer.
 3. Implementar o **sistema de pontuação (score)**:
    - Conectar o sinal de **FoodSpawner** para atualizar o score sempre que uma comida é consumida.
+   - Printar no console a cada atualização 
 4. Implementar o **sistema de tempo (timer)**:
    - Exibir o tempo total ao morrer e durante o jogo.
    - Utilizar `Timer` e, se possível, um `TimeManager` para obter timestamps.
