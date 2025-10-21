@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cbc4igl2p6y6r" path="res://resources/assets/sound_effects/Lose.wav" id="3_wgyui"]
 
 [node name="EndScreen" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
