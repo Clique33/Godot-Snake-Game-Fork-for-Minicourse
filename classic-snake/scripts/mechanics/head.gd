@@ -18,9 +18,7 @@ var _internal_speed : float
 
 func _process(delta: float) -> void:
 	change_direction_snapped()
-	velocity = direction_of_movement*_internal_speed*delta
-	print(position)
-	position = snapped(position + velocity,Vector2(4,4))
+	move(delta)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -34,6 +32,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		direction_of_next_movement = vector
 		moved_audio_player.play()
 
+
+func move(delta : float) -> void:
+	velocity = direction_of_movement*_internal_speed*delta
+	position = snapped(position + velocity,Vector2(4,4))
+	
 
 func change_direction_snapped() -> void:
 	if position+offset_vector == snapped(position,grid_size):
