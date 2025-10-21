@@ -118,7 +118,7 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 
 ---
 
-## 🧱 Módulo 2 — Interface do Usuário (UI)
+## 🧱 Módulo 2 — Interface do Usuário e Experiência do Usuário (UI/UX)
 
 ### 💡 Cena da HUD (*Heads-Up Display*)
 
@@ -146,17 +146,17 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 
 ---
 
-## 🎨 Módulo 3 — Experiência do Usuário (UX)
+### 🎨 Inclusão de Assets
 
 1. Adicionar uma pasta com **assets** visuais e sonoros.  
 2. Personalizar a interface e o jogo:
-   - Adicionar fontes aos `Labels`.
+   - Adicionar fonte aos `Label`s.
    - Adicionar efeitos sonoros:
      - Som “Turn” na **Head**;
      - Som “Eat” na **Main**;
      - Som “Lose” na **EndScreen**.
    - Adicionar sprites para a cabeça e a maçã.
-   - Rotacionar o sprite da cabeça.
+   - Rotacionar o sprite da cabeça, de acordo com o movimento.
    - Alterar o **Field** com um sprite de piso (*Floor*).
    - Personalizar o fundo da HUD com `ColorPicker`.
    - Exibir o ícone da maçã na HUD.
