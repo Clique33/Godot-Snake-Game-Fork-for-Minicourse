@@ -1,8 +1,10 @@
 # 🎮 Plano de Aula do Minicurso: Desenvolvimento de Jogo 2D com Godot
 
 ## 🎯 Objetivo Geral
-Apresentar, de forma prática e progressiva, os principais conceitos e ferramentas do motor **Godot Engine** através do desenvolvimento completo de um jogo 2D no estilo *Snake*.  
-O foco é compreender a estrutura de nós (*Nodes*), o uso de scripts em GDScript e a lógica de construção de cenas interativas.
+Apresentar, de forma prática e progressiva, os principais conceitos e ferramentas da **Godot Engine** através do desenvolvimento completo de um jogo 2D no estilo *Classic Snake*, baseado no projeto anterior de **Awfyboy** - [Awfyboy/Godot-Snake-Game](https://github.com/Awfyboy/Godot-Snake-Game) (de onde este projeto fez fork).  
+O foco é compreender as principais estruturas de nós (*Nodes*), o uso de scripts em GDScript e a lógica de construção de cenas interativas.
+
+O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Clique33/Godot-Snake-Game-Fork-for-Minicourse/commit/b63e0034496f845ebc79e29c6d22d172f49d161e)
 
 ---
 
@@ -11,7 +13,7 @@ O foco é compreender a estrutura de nós (*Nodes*), o uso de scripts em GDScrip
 ### 🧠 Cena da Cabeça (*Head*)
 
 1. **Introdução ao conceito de Node**
-   - Explicar o que é um Node e as diferenças entre `Node`, `Node2D`, `Node3D` e `Control`.
+   - Explicar o que é um **Node** e as diferenças entre `Node`, `Node2D`, `Node3D` e `Control`.
    - Criar uma nova cena chamada **Head**, utilizando um `Node2D` como nó raiz, dentro da pasta `scenes`.
 
 2. **Explorando o Transform e o Sprite**
@@ -34,6 +36,25 @@ O foco é compreender a estrutura de nós (*Nodes*), o uso de scripts em GDScrip
    - Demonstrar o uso de `_unhandled_input()` sem `get_vector()` e, em seguida, com `get_vector()`.  
    - Aplicar multiplicação por `speed` e `delta` para controlar a velocidade.  
    - Finalizar impedindo movimentações em direções opostas.
+
+#### Estado final:
+
+1. **Cenas**
+    - head.tscn:
+       - Raíz `CharacterBody2D` e um `Sprite2D` como filho
+    - test_head.tscn:
+       - Raíz `Node2D` e um `Head` como filho
+      
+2. **Atributos**
+    - head.gd:
+       - `possible_directions`: um vetor com as quatro direções básicas de Vector2
+       - `speed`: um float a ser multiplicado pela direção para alterar a velocidade do movimento
+       - `direction_of_movement`: `Vector2` usado para indicar a direção atual do movimento
+      
+3. **Métodos**
+    - head.gd:
+       - `_process` setando `velocity` e chamando `move_and_slide`
+       - `_unhandled_input` usando `get_vector` para setar direção do movimento    
 
 ---
 
@@ -62,7 +83,6 @@ O foco é compreender a estrutura de nós (*Nodes*), o uso de scripts em GDScrip
 5. Introduzir o uso de **variáveis exportadas** (`@export`) para permitir ajustes no editor:
    - `Head.speed`
    - `FoodSpawner.maximum_concurrent_foods`
-   - `FoodSpawner.delay`
    - `FoodSpawner.limit_minimum`
    - `FoodSpawner.limit_maximum`
 
