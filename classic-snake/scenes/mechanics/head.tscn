@@ -5,19 +5,18 @@
 [ext_resource type="AudioStream" uid="uid://cy6pei2ki56ip" path="res://resources/assets/sound_effects/Turn.wav" id="3_a1quq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d75dd"]
-size = Vector2(115, 113)
+size = Vector2(24, 24)
 
 [node name="Head" type="CharacterBody2D"]
 script = ExtResource("1_d75dd")
-speed = 15.0
+direction_of_movement = Vector2(1, 0)
+speed = 4.0
 
 [node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
 texture = ExtResource("2_a1quq")
 region_rect = Rect2(16, 16, 96.458, 93.956)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d75dd")
 
 [node name="MovedAudioPlayer" type="AudioStreamPlayer2D" parent="."]
