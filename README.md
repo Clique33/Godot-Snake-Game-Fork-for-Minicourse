@@ -63,7 +63,7 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 1. Criar a cena **Food** como `Node2D`.  
 2. Adicionar uma cena de teste em `scenes/test`, contendo **Head** e **Food**.  
 3. Introduzir o conceito de **colisões**:
-   - Adicionar um `Area2D` e um `CollisionShape2D` tanto em **Food** quanto em **Head**.
+   - Adicionar um `Area2D` e um `CollisionShape2D` em **Food** e um `CollisionShape2D` em **Head**.
 4. Explicar o uso de **sinais** (*Signals*) no Godot.
 5. Criar o script de **Food** e associá-lo à cena.
 6. Demonstrar a detecção de colisão entre `Area2D` e `CharacterBody2D`.
@@ -77,8 +77,8 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 2. Explicar o conceito de *Spawner* (gerador de objetos).  
 3. Criar uma cena de teste em `scenes/test` para o spawner.  
 4. Implementar a lógica de:
-   - Escolher um local aleatório dentro de limites definidos (`x` e `y`);
-   - Instanciar **Food** no local e conectar seus sinais;
+   - Escolher um local aleatório dentro de limites definidos (`limit_minimum` e `limit_maximum`);
+   - Instanciar **Food** no local (`global_position`) e conectar seus sinais;
    - Continuar gerando até o número máximo especificado.
 5. Introduzir o uso de **variáveis exportadas** (`@export`) para permitir ajustes no editor:
    - `Head.speed`
@@ -97,6 +97,7 @@ O projeto deve ser iniciado a partir do [commit inicial](https://github.com/Cliq
 5. Criar bordas no mapa e definir colisões.  
 6. Implementar a condição de derrota ao bater nas laterais:
    - Conectar sinais de colisão para reiniciar a cena de teste.
+7. Explicar a noção de `call_deferred` e alterar add_child do spawner e reload para utilizá-la. 
 
 ---
 
